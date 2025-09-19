@@ -1,0 +1,16 @@
+# Ignore Python bytecode directories
+__pycache__/
+
+# Ignore Python compiled files
+*.pyc
+
+.env
+
+.venv/
+.vscode/
+
+# DBT related stuff
+logs/*
+dbt_packages/*
+
+*.zip
