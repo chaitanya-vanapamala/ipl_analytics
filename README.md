@@ -8,9 +8,9 @@ This is an **end-to-end data application** that serves as a powerful analytics t
 ## Features
 
 * **Data Ingestion**: Collects and processes raw IPL match data from JSON files sourced from **cricsheet.org**.
-* **Data Transformation**: Uses **dbt (Data Build Tool)** to model and transform the data into a clean, dimensional schema (`fact` and `dimension` tables) for efficient querying. Users can use any one of models like On-Device **Ollama**, **GROQ** and **Google Gemini**.
-* **AI-Powered SQL Agent**: A **LangChain SQL Agent** translates natural language questions (e.g., "Who scored the most runs in the 2023 season?") into executable SQL queries. It also converts the DB output back into natural language for easy user understanding.
+* **Data Transformation**: Uses **dbt (Data Build Tool)** to model and transform the data into a clean, dimensional schema (`fact` and `dimension` tables) for efficient querying.
 * **Local Data Warehouse**: Utilizes **DuckDB**, an in-process analytical data management system, for high-performance, on-the-fly queries without the need for a separate database server.
+* **AI-Powered SQL Agent**: A **LangChain SQL Agent** translates natural language questions (e.g., "Who scored the most runs in the 2023 season?") into executable SQL queries. It also converts the DB output back into natural language for easy user understanding. Users can use any one of models like On-Device **Ollama**, **GROQ** and **Google Gemini**.
 * **Intuitive UI**: A **Streamlit** chat interface provides a user-friendly way to interact with the data agent.
 
 
