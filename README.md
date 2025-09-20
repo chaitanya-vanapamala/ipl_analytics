@@ -56,6 +56,7 @@ To run this project locally, you'll need the following installed:
     ```
 
 4.  **Run the data pipeline (Optional):**
+
     `ipl_dwh/dev.duck` already equiped with the trasformed data from 2008 to 2015 IPL data. If you want to update the data then Execute the ingestion and transformation scripts. This step will:
     * Download raw JSON data and place them in `raw_data/ipl_male_json` directory.
     * Convert JSON to CSV and load into the DuckDB file using following script.
