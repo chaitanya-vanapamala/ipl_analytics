@@ -1,4 +1,4 @@
-# 🏏 IPL Statistics Analyzer Chatbot: Your Cricket Data Agent 🤖
+# 🏏IPL Stats Analyzer Chatbot - Your Cricket Data Agent🤖
 
 This is an **end-to-end data application** that serves as a powerful analytics tool for Indian Premier League (IPL) data. It's designed to let users explore complex cricket statistics using **natural language**, thanks to a **LangChain-powered SQL Agent**. Think of it as a personal data analyst for IPL, all through a simple chat interface. 
 
