@@ -1,7 +1,7 @@
 from typing import List
 
 from langchain_core.language_models.chat_models import BaseChatModel
-from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
+from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage, AIMessage
 
 from ipl_agent.tools import call_tool
 from ipl_agent.logging import *
@@ -75,14 +75,20 @@ def ask(
     messages = history.copy()
     messages.append(HumanMessage (content=query))
     while n_iterations < max_iterations: 
-        response = llm.invoke(messages) 
-        messages.append(response)
-        if not response.tool_calls:
-            return response.content
-        for tool_call in response.tool_calls: 
-            response = call_tool(tool_call)
+        try: 
+            response = llm.invoke(messages) 
             messages.append(response)
-        n_iterations += 1
+            if not response.tool_calls:
+                return response.content
+            for tool_call in response.tool_calls: 
+                response = call_tool(tool_call)
+                messages.append(response)
+            n_iterations += 1
+        except Exception as e:
+            log_pannel(title="Model Exception", content=str(e), border_style=blue_border_style)
+            if 'InternalServerError' in str(e):
+                messages.append(AIMessage(content="Error Occured While Calling AI Agent, Please try again!"))
+                break
     
     raise RuntimeError(
         "Max number of iterations reached. Please try again with different query."
